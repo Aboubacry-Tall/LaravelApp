@@ -17,7 +17,7 @@ class CustomersController extends Controller
     {
         $customers = Customer::get();
 
-        return CustomerResource::collection($customers);
+        return $customers;
     }
 
     /**

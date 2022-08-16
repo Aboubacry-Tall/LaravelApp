@@ -1,0 +1,22 @@
+<div class="container">
+  <h2 class="text-center mt-5" style="font-size: 50px">TestApp</h2>
+
+  <div class="row">
+    <div class="col-sm-6 offset-3">
+      <div class="shadow p-3">
+        <h1 class="text-center">Customer Info</h1>
+        <p><b>Name</b> : {{ customer.name }}</p>
+        <p><b>Phone</b> : {{ customer.phone }}</p>
+        <br />
+        <button
+          mat-raised-button
+          color="primary"
+          class="me-2"
+          (click)="redirection()"
+        >
+          Acceuil
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

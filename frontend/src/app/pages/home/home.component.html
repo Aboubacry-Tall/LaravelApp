@@ -1,0 +1,79 @@
+<div class="container">
+  <h2 class="text-center mt-5" style="font-size: 50px">TestApp</h2>
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="shadow-sm px-3 py-3">
+        <div class="row">
+          <div class="col-sm-1">
+            <b>N°</b>
+          </div>
+          <div class="col-sm-8">
+            <b>Names</b>
+          </div>
+          <div class="col-sm-3">
+            <b>Phones</b>
+          </div>
+        </div>
+      </div>
+      <div class="shadow-sm px-3 py-3">
+        <div *ngFor="let customer of customers">
+          <div class="row">
+            <div class="col-sm-1">
+              <p>{{ customer.id }}</p>
+            </div>
+            <div class="col-sm-8">
+              <p>{{ customer.name }}</p>
+            </div>
+            <div class="col-sm-3">
+              <p>{{ customer.phone }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <mat-card>
+        <mat-card-content>
+          <h3 class="text-center fs-3">Add new Customer</h3>
+          <form #addTacheForm="ngForm" (ngSubmit)="addCustomer()">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Customer name</mat-label>
+              <input
+                matInput
+                name="name"
+                type="text"
+                [(ngModel)]="customer.name"
+                placeholder="Name"
+                required
+                #name="ngModel"
+              />
+            </mat-form-field>
+
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Customer phone</mat-label>
+              <input
+                matInput
+                name="phone"
+                [(ngModel)]="customer.phone"
+                placeholder="Phone"
+                required
+                #phone="ngModel"
+              />
+            </mat-form-field>
+          </form>
+          <br />
+          <button
+            mat-raised-button
+            color="primary"
+            class="me-2"
+            (click)="addCustomer()"
+          >
+            Enregistrer
+          </button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+
